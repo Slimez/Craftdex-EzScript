@@ -1,0 +1,49 @@
+@echo off
+title Craftdex EzScript Startup Script v0.3
+goto menu
+
+
+:menu  
+echo .
+echo .
+echo ================================
+echo CRAFTDEX STARTUP SCRIPT v0.3
+echo --------------------------------
+echo STARTUP SCRIPT BY SLIMEZ_GAMING
+echo ================================
+echo .
+echo .
+echo //Main Menu\\
+echo --Enter the ID for the script you select!--
+echo .
+echo Spigot;ID:01
+echo BungeeCord;ID:02
+echo Exit;ID:00
+echo -------------------------------------------
+set /p menuinput=
+if %menuinput% == 01 goto input.script.spigot
+if %menuinput% == 02 goto input.script.bungee
+if %menuinput% == 00 goto input.tools.quit
+if else goto menu.deny 
+
+:input.script.spigot
+java -Xms2G -Xmx2G -jar spigot.jar
+echo.
+goto menu
+
+
+:input.script.bungee
+java -jar bungeecord.jar
+echo.
+goto menu
+
+
+:input.tools.quit
+echo Shutting down...
+exit
+
+
+:menu.deny
+echo Syntax Error!
+goto menu
+
